@@ -1,0 +1,17 @@
+Colores hexadecimal
+principal:
+#020a3b
+
+del mas claro al mas fuerte
+
+#e6f3ff
+#d1e8ff
+#acd3ff
+#7ab3ff
+#4682ff
+#1d51ff
+#002aff
+#002eff
+#0028dc
+#0520aa
+#0520aa

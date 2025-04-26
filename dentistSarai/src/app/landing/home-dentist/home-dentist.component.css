@@ -1,0 +1,297 @@
+.header-carousel .owl-dots {
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    top: 0;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-carousel .owl-dots .owl-dot {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin: 5px 0;
+    background: #FFFFFF;
+    box-shadow: 0 0 30px rgba(255, 255, 255, .9);
+    border-radius: 45px !important;
+    transition: .5s;
+  }
+  
+  .header-carousel .owl-dots .owl-dot.active {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .header-carousel .owl-dots .owl-dot img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 2px;
+    border-radius: 45px !important;
+    transition: .5s;
+  }
+  
+
+  .position-relative.h-100 { height: 100%; }
+
+/* Contenedor que mantiene la proporción 16:9 y hace cover del SVG */
+.contact-image {
+  width: 100%;
+  padding-top: 56.25%; /* 9/16 = 0.5625 */
+  background: url('/assets/images/dentist/contact-4.svg') center/cover no-repeat;
+}
+
+/* Ajuste para pantallas pequeñas (ratio 4:3 aprox.) */
+@media (max-width: 768px) {
+  .contact-image {
+    padding-top: 75%; /* 3/4 = 0.75 */
+  }
+}
+
+
+
+.map-container {
+  overflow: hidden;
+  position: relative;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: 250px;
+}
+
+@media (max-width: 767px) {
+  .map-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .map-container {
+    height: 180px;
+  }
+}
+
+
+
+/* Animaciones para las tarjetas de la sección de servicios */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Retrasos para animar las tarjetas secuencialmente */
+.card-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.card-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.card-delay-3 {
+  animation-delay: 0.6s;
+}
+
+/* Efectos adicionales al pasar el mouse */
+.card.fade-in-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.fade-in-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Animación para los badges */
+.badge {
+  transition: all 0.3s ease;
+}
+
+.card:hover .badge {
+  transform: scale(1.1);
+}
+
+/* Animación para los íconos */
+.card .bi {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .bi {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Animación para la sección CTA */
+.card.bg-primary {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card.bg-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* Mejorar visibilidad de la animación en dispositivos móviles */
+@media (max-width: 768px) {
+  .fade-in-card {
+    animation-duration: 0.5s;
+  }
+  
+  .card-delay-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .card-delay-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .card-delay-3 {
+    animation-delay: 0.3s;
+  }
+}
+
+
+/* Contenedor principal para imágenes con indicador de porcentaje */
+.percentage-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* El indicador de porcentaje circular */
+.percentage-indicator {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 60px;
+  height: 60px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  font-weight: bold;
+  color: #0d6efd; /* Color primario */
+  transition: all 0.5s ease;
+  transform: scale(0);
+  animation: scaleIn 0.5s ease forwards;
+}
+
+/* Círculo de progreso para mostrar visualmente el porcentaje */
+.percentage-indicator::before {
+  content: "";
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #0d6efd var(--percentage, 100%), 
+    rgba(13, 110, 253, 0.2) var(--percentage, 100%)
+  );
+  transition: background 0.8s ease;
+}
+
+/* Círculo interno blanco para crear el efecto donut */
+.percentage-indicator::after {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+}
+
+/* El texto del porcentaje */
+.percentage-text {
+  position: relative;
+  z-index: 3;
+  font-size: 16px;
+}
+
+/* Animación de entrada */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover effects */
+.percentage-image-container:hover .percentage-indicator {
+  transform: scale(1.1);
+}
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+  .percentage-indicator {
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .percentage-indicator::before {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .percentage-indicator::after {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .percentage-text {
+    font-size: 14px;
+  }
+}
+
+/* Animación para que el porcentaje se llene gradualmente */
+@keyframes fillPercentage {
+  from {
+    --percentage: 0%;
+  }
+  to {
+    --percentage: var(--target-percentage);
+  }
+}
+
+/* Clases específicas para cada nivel de porcentaje */
+.percentage-100 .percentage-indicator::before {
+  --target-percentage: 100%;
+  animation: fillPercentage 1.5s ease-out forwards;
+}
+
+.percentage-95 .percentage-indicator::before {
+  --target-percentage: 95%;
+  animation: fillPercentage 1.5s ease-out forwards;
+}
+
+.percentage-90 .percentage-indicator::before {
+  --target-percentage: 90%;
+  animation: fillPercentage 1.5s ease-out forwards;
+}
+
+/* Puede agregar más porcentajes según sea necesario */

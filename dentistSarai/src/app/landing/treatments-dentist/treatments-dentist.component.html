@@ -1,0 +1,116 @@
+<!-- home-dentist.component.html -->
+<app-nav-bar-dentist></app-nav-bar-dentist>
+
+<!-- home-dentist.component.html -->
+<div class="yeezy-inspired-container">
+    
+  
+    <!-- Hero Section con tipografía grande y espaciado -->
+    <section class="hero-section">
+      <h1 class="hero-title">TRANSFORMACIÓN DENTAL</h1>
+      <p class="hero-subtitle">PRECISIÓN · CONFORT · RESULTADOS</p>
+    </section>
+  
+    <!-- Sección de comparación con diseño minimalista -->
+    <section class="comparison-section">
+      <div class="image-comparison-container">
+        <div #imgWrapper class="img-wrapper">
+          <div class="img-container">
+            <img class="after-img" src="assets/images/treatments/despues.webp" alt="Después del tratamiento" />
+            <img #beforeImage class="before-img" src="assets/images/treatments/antes.webp" alt="Antes del tratamiento" />
+          </div>
+          
+          <div #sliderHandle class="slider-handle">
+            <div class="slider-line"></div>
+          </div>
+          
+          <input #slider type="range" min="0" max="100" value="50" class="slider" />
+        </div>
+        
+        <p class="comparison-caption">
+          DESLIZA PARA VER EL CAMBIO
+        </p>
+      </div>
+    </section>
+  
+    <!-- Servicios con diseño minimalista -->
+    <section class="services-grid">
+
+        <!-- Servicio 1 -->
+<div class="service-item service-one">
+    <div class="service-content">
+      <!-- Bloque de Texto -->
+      <div class="text-content">
+        <h3 class="service-title">PROFILAXIS DENTAL</h3>
+        <p class="service-description">
+          La profilaxis dental es un procedimiento preventivo fundamental que elimina eficazmente el sarro y la placa bacteriana mediante el uso de vibraciones de alta frecuencia. Este tratamiento no solo preserva el esmalte dental, sino que también ayuda a prevenir caries y enfermedades periodontales, garantizando una sonrisa saludable y duradera. Además, contribuye a mejorar la salud general bucal, manteniendo las encías en óptimas condiciones y reduciendo el riesgo de inflamaciones.
+        </p>
+      </div>
+      <!-- Bloque de Imagen -->
+      <div class="image-wrapper">
+        <div class="sensitive-image-container" [class.blurred]="!showImage1">
+          <img src="assets/images/treatments/Profilaxis_dental_con_ultrasonido.jpg" alt="Profilaxis dental" />
+          <div *ngIf="!showImage1" class="overlay">
+            <p>CONTENIDO SENSIBLE</p>
+            <button class="view-button" (click)="showImage1 = true">VER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+      <!-- Servicio 2 -->
+      <div class="service-item">
+        <h3 class="service-title">CIRUGÍA DE TERCEROS MOLARES</h3>
+        <p class="service-description">
+          Extracción de muelas del juicio cuando no tienen espacio para erupcionar correctamente, previniendo dolor e infecciones.
+        </p>
+        <div class="sensitive-image-container" [class.blurred]="!showImage3">
+          <img src="assets/images/treatments/molares_mod.jpg" alt="Cirugía de terceros molares" />
+          <div *ngIf="!showImage3" class="overlay">
+            <p>CONTENIDO SENSIBLE</p>
+            <button class="view-button" (click)="showImage3 = true">VER</button>
+          </div>
+        </div>
+      </div>
+        
+  
+      <!-- Servicio 3 -->
+      <div class="service-item">
+        <h3 class="service-title">FASE 1 PERIODONTAL</h3>
+        <p class="service-description">
+          Limpieza profunda enfocada en eliminar bacterias de encías y superficies dentales. Primer paso para tratar enfermedades periodontales.
+        </p>
+        <div class="sensitive-image-container" [class.blurred]="!showImage2">
+          <img src="assets/images/treatments/fase_1.jpg" alt="Fase 1 periodontal" />
+          <div *ngIf="!showImage2" class="overlay">
+            <p>CONTENIDO SENSIBLE</p>
+            <button class="view-button" (click)="showImage2 = true">VER</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Servicio 4 -->
+      <div class="service-item">
+        <h3 class="service-title">FASE 2 PERIODONTAL</h3>
+        <p class="service-description">
+          Procedimientos quirúrgicos para acceder a las raíces dentales y tejidos profundos, eliminando bolsas periodontales.
+        </p>
+        <div class="sensitive-image-container" [class.blurred]="!showImage4">
+          <img src="assets/images/treatments/fase_2_mod.jpg" alt="Fase 2 periodontal" />
+          <div *ngIf="!showImage4" class="overlay">
+            <p>CONTENIDO SENSIBLE</p>
+            <button class="view-button" (click)="showImage4 = true">VER</button>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+  
+    
+  </div>
+
+  <app-footer-dentist></app-footer-dentist>

@@ -1,0 +1,62 @@
+:root {
+    --color-lightest: #e6f3ff;
+    --color-light:    #d1e8ff;
+    --color-mid:      #7ab3ff;
+    --color-primary:  #020a3b;
+    --color-accent:   #4682ff;
+  }
+  
+  /* Footer general */
+  .footer {
+    background-color: var(--color-primary);
+    color: var(--color-lightest);
+    font-size: 0.9rem;
+  }
+  
+  .footer a {
+    color: var(--color-light);
+    text-decoration: none;
+    transition: color .3s;
+  }
+  
+  .footer a:hover {
+    color: var(--color-accent);
+  }
+  
+  /* Títulos */
+  .footer-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-lightest);
+  }
+  
+  /* Links list */
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Bottom bar */
+  .footer-bottom {
+    background-color: var(--color-mid);
+    color: var(--color-primary);
+  }
+  
+  .footer-bottom a {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+  
+  .footer-bottom a:hover {
+    color: var(--color-accent);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .footer-top .row > [class*="col-"] {
+      text-align: center;
+    }
+    .footer-top .footer-links {
+      padding-left: 0;
+    }
+  }
+  
